@@ -43,3 +43,86 @@ class LettersCalculator extends Component {
 }
 
 export default LettersCalculator
+
+
+
+
+''''''
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mainbg {
+  background-color: aqua;
+
+  display: flex;
+  flex-direction: column;
+}
+.headerbg {
+  background-color: rgb(14, 6, 82);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.h1 {
+  font-size: 20px;
+  color: white;
+}
+.inputcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.icon {
+  height: 50px;
+  width: 50px;
+}
+.bottomcontainer {
+  padding: 30px;
+}
+.bodybg {
+  background-color: white;
+}
+
+
+
+
+const App = () => (
+  <div className="mainbg">
+    <div className="headerbg">
+      <h1 className="h1">HISTORY</h1>
+      <div className="inputcontainer">
+        <div className="icon">
+          <img src="https://assets.ccbp.in/frontend/react-js/search-img.png" />
+        </div>
+        <input type="text" placeholder="search history" />
+      </div>
+    </div>
+    <div className="bottomcontainer">
+        <div className='bodybg'>
+            <ul>
+                {initialHistoryList.map(eachList=>(
+                    <ListProfile eachList={eachList}
+                ))}
+            </ul>
+        </div>
+    </div>
+  </div>
+)
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
+export default App
+
+
