@@ -8,8 +8,7 @@ class LettersCalculator extends Component {
 
   onChange = event => {
     letters = event.target.value
-    this.setState(prevState => ({
-      count: prevState.count + letters.length,
+    this.setState({count:letters.length,
       searchInput: letters,
     }))
   }
